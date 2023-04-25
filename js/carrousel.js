@@ -13,12 +13,16 @@
 
     let index = 0;
     let ancien_index = -1;
-    let position = 0; // Permet d'indexer les images de la galerie et
+    let position = 0; // Permet d'indexer les images de la galerie
 
     bouton.addEventListener('mousedown', function() {
         console.log('Ouvrir la boîte modale.');
         carrousel.classList.add('carrousel--activer');
         ajouter_img_dans_carrousel();
+
+        /* https://developer.mozilla.org/fr/docs/Web/API/Element/classList
+    
+        Propriété clasList.contain('carrousel--activer') permet de vérifier si le carrousel est ouvert */
     })
 
     carrousel__x.addEventListener('mousedown', function() {
@@ -80,9 +84,17 @@
         if (ancien_index != -1) {
             // carrousel__figure.children[ancien_index].style.opacity = 0;
             carrousel__figure.children[ancien_index].classList.remove('carrousel__img--activer');
+            // carrousel__form.children[ancien_index].checked
         }
+
         // carrousel__figure.children[index].style.opacity = 1;
         carrousel__figure.children[index].classList.add('carrousel__img--activer');
         ancien_index = index;
     }
+
+    /**
+     * Permet de vérifier si la classe « carrousel--activer » se trouve
+     * dans la liste des classes carrousel
+     * clasList.contain('carrousel--activer');
+     */
 })()
