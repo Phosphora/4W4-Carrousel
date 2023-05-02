@@ -6,13 +6,15 @@
     let carrousel__x = document.querySelector(".carrousel__x");
     let carrousel__figure = document.querySelector(".carrousel__figure");
     let carrousel__form = document.querySelector(".carrousel__form");
+    let carrousel__gauche = document.querySelector(".carrousel__gauche");
+    let carrousel__droite = document.querySelector(".carrousel__droite");
 
     let galerie = document.querySelector(".galerie");
     let galerie__img = galerie.querySelectorAll("img");
     console.log(galerie__img);
 
-    let index = 0;
-    let ancien_index = -1;
+    let index = 0; // Permet d'identifier l'image courante du carrousel
+    let ancien_index = -1; // Permet d'identifier l'image précédente
     let position = 0; // Permet d'indexer les images de la galerie
 
     bouton.addEventListener('mousedown', function() {
@@ -22,7 +24,7 @@
 
         /* https://developer.mozilla.org/fr/docs/Web/API/Element/classList
     
-        Propriété clasList.contain('carrousel--activer') permet de vérifier si le carrousel est ouvert */
+        La propriété clasList.contain('carrousel--activer') permet de vérifier si le carrousel est ouvert. */
     })
 
     carrousel__x.addEventListener('mousedown', function() {
@@ -38,13 +40,15 @@
     function ajouter_img_dans_carrousel() {
         for (const elm of galerie__img) {
             elm.dataset.index = position;
-            elm.addEventListener('mousedown', function() {
-                index = this.dataset.index;
+            elm.addEventListener('mousedown', function(e) {
+                index = e.target.dataset.index;
                 afficher_image(index);
                 console.log(index);
             });
             creation_img_carrousel(elm);
             creation_radio_carrousel();
+            gestion_fleche_gauche();
+            gestion_fleche_droite();
         }
     }
 
@@ -73,7 +77,7 @@
         // position++
         carrousel__form.appendChild(rad);
 
-        rad.addEventListener('mousedown', function(){
+        rad.addEventListener('mousedown', function() {
             console.log(this.dataset.index);
             index = this.dataset.index;
             afficher_image(index);
@@ -90,6 +94,28 @@
         // carrousel__figure.children[index].style.opacity = 1;
         carrousel__figure.children[index].classList.add('carrousel__img--activer');
         ancien_index = index;
+    }
+
+    function gestion_fleche_gauche() {
+        carrousel__gauche.dataset.index = position;
+        position = position - 1 // Incrémentation de 1
+
+        carrousel__gauche.addEventListener('mousedown', function() {
+            console.log(this.dataset.index);
+            index = this.dataset.index;
+            afficher_image(index);
+        });
+    }
+
+    function gestion_fleche_droite() {
+        carrousel__droite.dataset.index = position;
+        position = position + 1 // Incrémentation de 1
+
+        carrousel__droite.addEventListener('mousedown', function() {
+            console.log(this.dataset.index);
+            index = this.dataset.index;
+            afficher_image(index);
+        });
     }
 
     /**

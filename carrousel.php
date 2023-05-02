@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Plugin Name: Carrousel
  * Author: Winnie Li
@@ -43,6 +43,8 @@
                 <button class="carrousel__x">X</button>
                 <figure class="carrousel__figure"></figure>
                 <form class="carrousel__form"></form>
+                <button class="carrousel__gauche"><-</button>
+                <button class="carrousel__droite">-></button>
             </div>';
  }
 
