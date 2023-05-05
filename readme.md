@@ -1,8 +1,8 @@
-# Exercice #2
+# Travail Pratique #2
 ## 4W4-Conception d'interfaces et développement Web
 ### Auteure : Winnie Li
 
-#### Objectif : Ajouter quelques fonctionnalités au carrousel
+#### Objectif : Améliorer l'extension « **Carrousel** »
 
 #### Liens de référence
 - Site sur le serveur Web distant **_Siteground_**

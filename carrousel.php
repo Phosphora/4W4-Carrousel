@@ -43,8 +43,8 @@
                 <button class="carrousel__x">X</button>
                 <figure class="carrousel__figure"></figure>
                 <form class="carrousel__form"></form>
-                <button class="carrousel__gauche"><-</button>
-                <button class="carrousel__droite">-></button>
+                <button class="carrousel__precedent"><-</button>
+                <button class="carrousel__suivant">-></button>
             </div>';
  }
 

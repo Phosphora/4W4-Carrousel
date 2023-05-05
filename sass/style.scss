@@ -61,16 +61,16 @@
     opacity: 1;
 }
 
-.carrousel__gauche {
+.carrousel__precedent, .carrousel__suivant {
     position: absolute;
     top: 50%;
-    left: 0;
     z-index: 3;
 }
 
-.carrousel__droite {
-    position: absolute;
-    top: 50%;
+.carrousel__precedent {
+    left: 0;
+}
+
+.carrousel__suivant {
     right: 0;
-    z-index: 3;
 }
